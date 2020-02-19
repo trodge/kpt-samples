@@ -3,4 +3,4 @@ kind: PubSubTopic
 metadata:
   labels:
     label-one: "value-one"
-  name: pubsubtopic-sample # {"type":"string","x-kustomize":{"setter":{"name":"name","value":"pubsubtopic-sample2"}}}
+  name: pubsubtopic-sample # {"type":"string","x-kustomize":{"setter":{"name":"name","value":"pubsubtopic-sample"}}}
