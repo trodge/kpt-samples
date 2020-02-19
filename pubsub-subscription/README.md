@@ -1,17 +1,17 @@
-pubsub
+.
 ==================================================
 
 # NAME
 
-  pubsub
+  .
 
 # SYNOPSIS
 
-  kubectl apply --recursive -f pubsub
+  kubectl apply --recursive -f .
 
 # Description
 
-kpt pubsub package
+kpt pubsub-subscription package
 
 # SEE ALSO
 

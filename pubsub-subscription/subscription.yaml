@@ -3,7 +3,7 @@ kind: PubSubSubscription
 metadata:
   labels:
     label-one: "value-one"
-  name: pubsubsubscription-sample
+  name: pubsubsubscription-sample # {"type":"string","x-kustomize":{"setter":{"name":"name","value":"pubsubtopic-sample2"}}}
 spec:
   ackDeadlineSeconds: 15 # {"description":"maximum time after a subscriber receives a message before the subscriber should acknowledge the message","type":"integer","x-kustomize":{"setter":{"name":"deadline","value":"15"}}}
   messageRetentionDuration: 86400s # {"description":"How long to retain unacknowledged messages in the subscription's backlog","type":"string","x-kustomize":{"setter":{"name":"retention","value":"86400s"}}}
