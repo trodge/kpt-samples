@@ -1,0 +1,8 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: pubsub
+packageMetadata:
+  tags:
+  - kcc.sample/app=pubsub
+  shortDescription: kpt pubsub package
