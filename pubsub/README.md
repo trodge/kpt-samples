@@ -11,7 +11,7 @@
 
 # Description
 
-kpt pubsub-subscription package
+sample description
 
 # SEE ALSO
 

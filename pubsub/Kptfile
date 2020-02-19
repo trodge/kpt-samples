@@ -3,6 +3,4 @@ kind: Kptfile
 metadata:
   name: .
 packageMetadata:
-  tags:
-  - kcc.sample/app=pubsub
-  shortDescription: kpt pubsub-topic package
+  shortDescription: sample description

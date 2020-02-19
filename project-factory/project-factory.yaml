@@ -1,0 +1,8 @@
+apiVersion: projectfactory.cnrm.cloud.google.com/v1beta1
+kind: ProjectFactory
+metadata:
+  billingAccount: 000000-000000-000000 # {"type":"string","x-kustomize":{"setter":{"name":"billingAccount","value":"000000-000000-000000"}}}
+  budgetAlertPubSubTopic: projects/cnrm-sample/topics/budget # {"type":"string","x-kustomize":{"setter":{"name":"budgetAlertPubSubTopic","value":"projects/cnrm-sample/topics/budget"}}}
+  budgetAmount: 0 # {"type":"number","x-kustomize":{"setter":{"name":"budgetAmount","value":"0"}}}
+  name: projectfactory-sample # {"type":"string","x-kustomize":{"setter":{"name":"name","value":"projectfactory-sample"}}}
+  orgId: 1234567 # {"type":"string","x-kustomize":{"setter":{"name":"orgId","value":"1234567"}}}
