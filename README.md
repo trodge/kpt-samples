@@ -2,8 +2,10 @@
 
 kpt packages are consumed using the following commands:
 
-`export SRC_REPO=git@github.com:trodge/kpt-samples.git
-kpt pkg get $SRC_REPO/pubsub-subscription pubsub-subscription`
+```
+export SRC_REPO=git@github.com:trodge/kpt-samples.git
+kpt pkg get $SRC_REPO/pubsub-subscription pubsub-subscription
+```
 
 # kpt Configuration
 
