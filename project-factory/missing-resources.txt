@@ -1,2 +1,4 @@
 The following resources needed by project factory are missing from KCC:
 google_resource_manager_lien
+google_project_usage_export_bucket
+

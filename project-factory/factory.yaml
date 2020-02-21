@@ -20,8 +20,7 @@ metadata:
   groupName: '' # {"description":"\"A group to control the project by being assigned group_role (defaults to project editor)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"groupName","value":""}}}
   groupRole: roles/editor # {"description":"\"The role to give the controlling group (group_name) over the project (defaults to project editor)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"groupRole","value":"roles/editor"}}}
   impersonateServiceAccounit: ''
-  labels:
-    label-one: value-one
+  labels: {}
   lien: false # {"description":"\"Add a lien on the project to prevent accidental deletion\"","type":"\"boolean\"","x-kustomize":{"setter":{"name":"lien","value":"false"}}}
   name: projectfactory-sample # {"description":"\"The name for the project\"","type":"\"string\"","x-kustomize":{"setter":{"name":"name","value":"projectfactory-sample"}}}
   orgId: 1234567 # {"description":"\"The organization ID.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"orgId","value":"1234567"}}}
