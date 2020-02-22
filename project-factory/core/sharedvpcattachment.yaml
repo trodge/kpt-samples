@@ -1,0 +1,7 @@
+apiVersion: compute.cnrm.cloud.google.com/v1beta1
+kind: ComputeSharedVPCServiceProject
+metadata:
+  name: shared-vpc-attachment
+spec:
+  projectRef:
+    name: thomasrodgers-service

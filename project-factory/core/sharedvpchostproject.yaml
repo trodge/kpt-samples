@@ -5,8 +5,8 @@ metadata:
     cnrm.cloud.google.com/organization-id: ''
     cnrm.cloud.google.com/deletion-policy: abandon
   labels: {}
-  name: thomasrodgers-service
+  name: thomasrodgers-host
 spec:
-  name: KCC Solutions Sample
+  name: KCC Thomas Rodgers
   billingAccountRef:
     external: ''

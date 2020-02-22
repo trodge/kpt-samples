@@ -7,6 +7,6 @@ metadata:
   labels: {}
   name: thomasrodgers-service
 spec:
-  name: KCC Solutions Sample
+  name: Thomas Rodgers Service
   billingAccountRef:
     external: ''
