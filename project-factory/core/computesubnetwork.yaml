@@ -3,7 +3,7 @@ kind: ComputeSubnetwork
 metadata:
   labels:
     label-one: "value-one"
-  name: computesubnetwork-sample
+  name: computesubnetwork-sample # {"description":"\"The name for the project\"","type":"\"string\"","x-kustomize":{"setter":{"name":"name","value":"computesubnetwork-sample"}}}
 spec:
   ipCidrRange: 10.2.0.0/16
   region: us-central1

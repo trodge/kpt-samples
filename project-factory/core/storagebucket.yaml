@@ -5,14 +5,14 @@ metadata:
   name: storagebucket-sample
 spec:
   lifecycleRule:
-    - action:
-        type: Delete
-      condition:
-        age: 7
+  - action:
+      type: Delete
+    condition:
+      age: 7
   versioning:
     enabled: true
   cors:
-    - origin: ["http://example.appspot.com"]
-      responseHeader: ["Content-Type"]
-      method: ["GET", "HEAD", "DELETE"]
-      maxAgeSeconds: 3600
+  - origin: ["http://example.appspot.com"]
+    responseHeader: ["Content-Type"]
+    method: ["GET", "HEAD", "DELETE"]
+    maxAgeSeconds: 3600

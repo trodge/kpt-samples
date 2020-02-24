@@ -1,35 +1,33 @@
-apiVersion: projectfactory.cnrm.cloud.google.com/v1beta1
-kind: ProjectFactory
-metadata:
+data:
   activateApis:
   - compute.googleapis.com
-  autoCreateNetwork: false # {"description":"\"Create the default network\"","type":"\"boolean\"","x-kustomize":{"setter":{"name":"autoCreateNetwork","value":"false"}}}
-  billingAccount: 000000-000000-000000 # {"description":"\"The ID of the billing account to associate this project with\"","type":"\"string\"","x-kustomize":{"setter":{"name":"billingAccount","value":"000000-000000-000000"}}}
-  bucketLocation: US # {"description":"\"The location for a GCS bucket to create (optional)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"bucketLocation","value":"US"}}}
-  bucketName: '' # {"description":"\"A name for a GCS bucket to create (in the bucket_project project), useful for Terraform state (optional)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"bucketName","value":""}}}
-  bucketProject: '' # {"description":"\"A project to create a GCS bucket (bucket_name) in, useful for Terraform state (optional)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"bucketProject","value":""}}}
-  budgetAlertPubSubTopic: projects/cnrm-sample/topics/budget # {"type":"string","x-kustomize":{"setter":{"name":"budgetAlertPubSubTopic","value":"projects/cnrm-sample/topics/budget"}}}
+  autoCreateNetwork: false
+  billingAccount: 000000-000000-000000
+  bucketLocation: US
+  bucketName: ''
+  bucketProject: ''
+  budgetAlertPubSubTopic: projects/cnrm-sample/topics/budget
   budgetAlertSpentPercents: []
-  budgetAmount: 0 # {"description":"\"The amount to use for a budget alert\"","type":"\"number\"","x-kustomize":{"setter":{"name":"budgetAmount","value":"0"}}}
-  credentialsPath: '' # {"description":"\"Path to a service account credentials file with rights to run the Project Factory. If this file is absent Terraform will fall back to Application Default Credentials.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"credentialsPath","value":""}}}
-  defaultServiceAccount: "disable" # {"description":"\"Project default service account setting: can be one of delete, deprivilege, disable, or keep.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"defaultServiceAccount","value":"disable"}}}
-  disableDependentServices: true # {"description":"\"Whether services that are enabled and which depend on this service should also be disabled when this service is destroyed.\"","type":"\"boolean\"","x-kustomize":{"setter":{"name":"disableDependentServices","value":"true"}}}
-  disableServicesOnDestroy: true # {"description":"\"Whether project services will be disabled when the resources are destroyed\"","type":"\"string\"","x-kustomize":{"setter":{"name":"disableServicesOnDestroy","value":"true"}}}
-  domain: '' # {"description":"\"The domain name (optional).\"","type":"\"string\"","x-kustomize":{"setter":{"name":"domain","value":""}}}
-  folderId: '' # {"description":"\"The ID of a folder to host this project\"","type":"\"string\"","x-kustomize":{"setter":{"name":"folderId","value":""}}}
-  groupName: '' # {"description":"\"A group to control the project by being assigned group_role (defaults to project editor)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"groupName","value":""}}}
-  groupRole: roles/editor # {"description":"\"The role to give the controlling group (group_name) over the project (defaults to project editor)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"groupRole","value":"roles/editor"}}}
+  budgetAmount: 0
+  credentialsPath: ''
+  defaultServiceAccount: "disable"
+  disableDependentServices: true
+  disableServicesOnDestroy: true
+  domain: ''
+  folderId: ''
+  groupName: ''
+  groupRole: roles/editor
   impersonateServiceAccounit: ''
   labels: {}
-  lien: false # {"description":"\"Add a lien on the project to prevent accidental deletion\"","type":"\"boolean\"","x-kustomize":{"setter":{"name":"lien","value":"false"}}}
-  name: projectfactory-sample # {"description":"\"The name for the project\"","type":"\"string\"","x-kustomize":{"setter":{"name":"name","value":"projectfactory-sample"}}}
-  orgId: 1234567 # {"description":"\"The organization ID.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"orgId","value":"1234567"}}}
-  pipExecutablePath: 'pip3' # {"description":"\"Pip executable path for precondition requirements.txt install.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"pipExecutablePath","value":"pip3"}}}
-  projectId: '' # {"description":"\"The ID to give the project. If not provided, the name will be used.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"projectId","value":""}}}
-  pythonInterpreterPath: 'python3' # {"description":"\"Python interpreter path for precondition check script.\"","type":"\"string\"","x-kustomize":{"setter":{"name":"pythonInterpreterPath","value":"python3"}}}
-  randomProjectId: false # {"description":"\"Adds a suffix of 4 random characters to the project_id\"","type":"\"boolean\"","x-kustomize":{"setter":{"name":"randomProjectId","value":"false"}}}
-  saRole: '' # {"description":"\"A role to give the default Service Account for the project (defaults to none)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"saRole","value":""}}}
-  sharedVpc: '' # {"description":"\"The ID of the host project which hosts the shared VPC\"","type":"\"string\"","x-kustomize":{"setter":{"name":"sharedVpc","value":""}}}
+  lien: false
+  name: projectfactory-sample
+  orgId: 1234567
+  pipExecutablePath: 'pip3'
+  projectId: ''
+  pythonInterpreterPath: 'python3'
+  randomProjectId: false
+  saRole: ''
+  sharedVpc: ''
   sharedVpcSubnets: []
-  usageBucketName: '' # {"description":"\"Name of a GCS bucket to store GCE usage reports in (optional)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"usageBucketName","value":""}}}
-  usageBucketPrefix: '' # {"description":"\"Prefix in the GCS bucket to store GCE usage reports in (optional)\"","type":"\"string\"","x-kustomize":{"setter":{"name":"usageBucketPrefix","value":""}}}
+  usageBucketName: ''
+  usageBucketPrefix: ''
