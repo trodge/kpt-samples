@@ -15,7 +15,7 @@ List kpt setters
 
 Set field values
 
-`kpt cfg set pubsub-subscription/ retain true`
+`kpt cfg set pubsub/ retain true`
 
 # create-setters.sh
 
