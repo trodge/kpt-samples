@@ -3,4 +3,7 @@ kind: Kptfile
 metadata:
   name: project-factory
 packageMetadata:
-  shortDescription: Project Factory contains resources and tools for creating Google Cloud projects.
+  shortDescription: Project Factory contains resources and tools for creating Google
+    Cloud projects.
+openAPI:
+  definitions:
