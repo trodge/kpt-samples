@@ -1,21 +1,20 @@
 # kpt Packages
 
-kpt packages are consumed using the following commands:
+kpt packages are consumed using the following command:
 
 ```
-export SRC_REPO=git@github.com:trodge/kpt-samples.git
-kpt pkg get $SRC_REPO/pubsub-subscription pubsub-subscription
+kpt pkg get https://github.com/trodge/kpt-samples.git/pubsub pubsub
 ```
 
 # kpt Configuration
 
 List kpt setters
 
-`kpt cfg list-setters pubsub-subscription`
+`kpt cfg list-setters pubsub`
 
 Set field values
 
-`kpt cfg set pubsub/ retain true`
+`kpt cfg set pubsub retain true`
 
 # create-setters.sh
 
