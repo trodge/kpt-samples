@@ -1,0 +1,6 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: project-factory
+packageMetadata:
+  shortDescription: Project Factory contains resources and tools for creating Google Cloud projects.
