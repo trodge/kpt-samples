@@ -4,3 +4,31 @@ metadata:
   name: .
 packageMetadata:
   shortDescription: sample description
+openAPI:
+  definitions:
+    io.k8s.cli.setters.subscription-name:
+      description: Name of the pubsub subscription
+      x-k8s-cli:
+        setter:
+          name: subscription-name
+          value: subscription-sample
+    io.k8s.cli.setters.deadline:
+      x-k8s-cli:
+        setter:
+          name: deadline
+          value: "15"
+    io.k8s.cli.setters.retain:
+      x-k8s-cli:
+        setter:
+          name: retain
+          value: "false"
+    io.k8s.cli.setters.retention:
+      x-k8s-cli:
+        setter:
+          name: retention
+          value: 86400s
+    io.k8s.cli.setters.topic-name:
+      x-k8s-cli:
+        setter:
+          name: topic-name
+          value: topic-sample

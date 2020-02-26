@@ -7,3 +7,35 @@ packageMetadata:
     Cloud projects.
 openAPI:
   definitions:
+    io.k8s.cli.setters.project-id:
+      description: The project ID
+      x-k8s-cli:
+        setter:
+          name: project-id
+          value: project-factory-project2
+    io.k8s.cli.setters.billing-account:
+      description: The billing account
+      x-k8s-cli:
+        setter:
+          name: billing-account
+          value: ""
+    io.k8s.cli.setters.org-id:
+      description: The organization id
+      x-k8s-cli:
+        setter:
+          name: org-id
+          value: ""
+    io.k8s.cli.setters.subscription-name:
+      description: Name of the pubsub subscription
+      x-k8s-cli:
+        setter:
+          name: subscription-name
+          value: subscription-sample
+    io.k8s.cli.substitutions.service-account:
+      x-k8s-cli:
+        substitution:
+          name: service-account
+          pattern: serviceAccount:cnrm-system@PROJECT_ID_SETTER.iam.gserviceaccount.com
+          values:
+          - marker: PROJECT_ID_SETTER
+            ref: '#/definitions/io.k8s.cli.setters.project-id'
