@@ -1,7 +1,6 @@
 apiVersion: storage.cnrm.cloud.google.com/v1beta1
 kind: StorageBucket
 metadata:
-  labels: {}
   name: storagebucket-sample
 spec:
   lifecycleRule:

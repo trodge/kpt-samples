@@ -26,9 +26,17 @@ openAPI:
       x-k8s-cli:
         setter:
           name: retention
-          value: 86400s
+          value: "86400"
     io.k8s.cli.setters.topic-name:
       x-k8s-cli:
         setter:
           name: topic-name
           value: topic-sample
+    io.k8s.cli.substitutions.message-retention:
+      x-k8s-cli:
+        substitution:
+          name: message-retention
+          pattern: RETENTION_SETTERs
+          values:
+          - marker: RETENTION_SETTER
+            ref: '#/definitions/io.k8s.cli.setters.retention'
