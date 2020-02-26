@@ -4,4 +4,4 @@ metadata:
   name: shared-vpc-attachment
 spec:
   projectRef:
-    name: project-factory-project # {"description":"name for the project","type":"string","x-kustomize":{"setter":{"name":"project-id","value":"project-factory-project"}}}
+    name: project-factory-project2 # {"description":"The project ID","type":"","x-kustomize":{"setter":{"name":"project-id","value":"project-factory-project2"}}}

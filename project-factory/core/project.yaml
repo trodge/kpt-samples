@@ -4,7 +4,7 @@ metadata:
   annotations:
     cnrm.cloud.google.com/organization-id: '' # {"description":"The organization id","type":"","x-kustomize":{"setter":{"name":"org-id","value":""}}}
     cnrm.cloud.google.com/deletion-policy: abandon
-  name: project-factory-project
+  name: project-factory-project2 # {"description":"The project ID","type":"","x-kustomize":{"setter":{"name":"project-id","value":"project-factory-project2"}}}
 spec:
   name: Project Factory Project
   billingAccountRef:

@@ -1,6 +1,3 @@
-# Replace [PROJECT_ID] below with your desired project ID.
-#
-# This sample assumes that you have created a service account named cnrm-system@[PROJECT_ID].iam.gserviceaccount.com.
 apiVersion: iam.cnrm.cloud.google.com/v1beta1
 kind: IAMPolicyMember
 metadata:
@@ -10,4 +7,4 @@ spec:
   role: roles/storage.admin
   resourceRef:
     kind: Project
-    name: project-factory-project
+    name: project-factory-project2 # {"description":"The project ID","type":"","x-kustomize":{"setter":{"name":"project-id","value":"project-factory-project2"}}}
