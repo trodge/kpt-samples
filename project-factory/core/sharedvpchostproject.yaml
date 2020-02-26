@@ -4,8 +4,8 @@ metadata:
   annotations:
     cnrm.cloud.google.com/organization-id: '' # {"$ref":"#/definitions/io.k8s.cli.setters.org-id"}
     cnrm.cloud.google.com/deletion-policy: abandon
-  name: thomasrodgers-host
+  name: project-factory-host
 spec:
-  name: KCC Thomas Rodgers
+  name: Project Factory Host
   billingAccountRef:
     external: '' # {"$ref":"#/definitions/io.k8s.cli.setters.billing-account"}

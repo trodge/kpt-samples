@@ -3,7 +3,7 @@ kind: IAMPolicyMember
 metadata:
   name: group-storage-admin-on-project-bucket
 spec:
-  member: serviceAccount:cnrm-system@project-factory-project.iam.gserviceaccount.com # {"$ref":"#/definitions/io.k8s.cli.substitutions.service-account"}
+  member: group:google-project-group@googlegroups.com
   role: roles/storage.admin
   resourceRef:
     kind: StorageBucket

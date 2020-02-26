@@ -3,7 +3,7 @@ kind: IAMPolicyMember
 metadata:
   name: group-role-to-vpc-subnets
 spec:
-  member: project-factory-group@googlegroups.com
+  member: group:project-factory-group@googlegroups.com
   role: roles/compute.networkUser
   resourceRef:
     kind: ComputeSubnetwork
