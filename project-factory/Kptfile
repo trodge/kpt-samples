@@ -14,23 +14,15 @@ openAPI:
           name: project-id
           value: project-factory-project
     io.k8s.cli.setters.billing-account:
-      description: The billing account
+      description: Billing account for the project
       x-k8s-cli:
         setter:
           name: billing-account
-          value: ""
     io.k8s.cli.setters.org-id:
-      description: The organization id
+      description: Organization ID for the project
       x-k8s-cli:
         setter:
           name: org-id
-          value: ""
-    io.k8s.cli.setters.subscription-name:
-      description: Name of the pubsub subscription
-      x-k8s-cli:
-        setter:
-          name: subscription-name
-          value: subscription-sample
     io.k8s.cli.substitutions.service-account:
       x-k8s-cli:
         substitution:
