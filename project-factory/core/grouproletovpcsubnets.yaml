@@ -1,0 +1,10 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicyMember
+metadata:
+  name: group-role-to-vpc-subnets
+spec:
+  member: project-factory-group@googlegroups.com
+  role: roles/compute.networkUser
+  resourceRef:
+    kind: ComputeSubnetwork
+    name: shared-vpc-subnet
