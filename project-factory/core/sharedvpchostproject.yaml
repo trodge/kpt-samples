@@ -2,11 +2,11 @@ apiVersion: resourcemanager.cnrm.cloud.google.com/v1beta1
 kind: Project
 metadata:
   annotations:
-    cnrm.cloud.google.com/organization-id: '' # {"description":"The organization id","type":"","x-kustomize":{"setter":{"name":"org-id","value":""}}}
+    cnrm.cloud.google.com/organization-id: '' # {"$ref":"#/definitions/io.k8s.cli.setters.org-id"}
     cnrm.cloud.google.com/deletion-policy: abandon
   labels: {}
   name: thomasrodgers-host
 spec:
   name: KCC Thomas Rodgers
   billingAccountRef:
-    external: '' # {"description":"The billing account","type":"","x-kustomize":{"setter":{"name":"billing-account","value":""}}}
+    external: '' # {"$ref":"#/definitions/io.k8s.cli.setters.billing-account"}

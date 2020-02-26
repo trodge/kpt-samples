@@ -3,8 +3,8 @@ kind: IAMPolicyMember
 metadata:
   name: controlling-group-vpc-membership
 spec:
-  member: serviceAccount:cnrm-system@project-factory-project.iam.gserviceaccount.com
+  member: serviceAccount:cnrm-system@project-factory-project.iam.gserviceaccount.com # {"$ref":"#/definitions/io.k8s.cli.substitutions.service-account"}
   role: roles/storage.admin
   resourceRef:
     kind: Project
-    name: project-factory-project2 # {"description":"The project ID","type":"","x-kustomize":{"setter":{"name":"project-id","value":"project-factory-project2"}}}
+    name: project-factory-project2 # {"$ref":"#/definitions/io.k8s.cli.setters.project-id"}

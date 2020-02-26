@@ -3,10 +3,10 @@ kind: PubSubSubscription
 metadata:
   labels:
     label-one: "value-one"
-  name: subscription-sample # {"description":"name of the pubsub subscription","type":"string","x-kustomize":{"setBy":"package-default","setter":{"name":"subscription-name","value":"subscription-sample"}}}
+  name: subscription-sample # {"$ref":"#/definitions/io.k8s.cli.setters.subscription-name"}
 spec:
-  ackDeadlineSeconds: 15 # {"description":"maximum time after a subscriber receives a message before the subscriber should acknowledge the message","type":"integer","x-kustomize":{"setBy":"package-default","setter":{"name":"deadline","value":"15"}}}
-  messageRetentionDuration: 86400s # {"description":"how long unacknowledged messages in the subscription's backlog are retained","type":"","x-kustomize":{"setBy":"package-default","setter":{"name":"retention","value":"86400s"}}}
-  retainAckedMessages: false # {"description":"whether to retain acknowledged messages","type":"boolean","x-kustomize":{"setBy":"package-default","setter":{"name":"retain","value":"false"}}}
+  ackDeadlineSeconds: 15 # {"$ref":"#/definitions/io.k8s.cli.setters.deadline"}
+  messageRetentionDuration: 86400s # {"$ref":"#/definitions/io.k8s.cli.setters.retention"}
+  retainAckedMessages: false # {"$ref":"#/definitions/io.k8s.cli.setters.retain"}
   topicRef:
     name: pubsubsubscription-dep
