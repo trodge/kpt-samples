@@ -7,4 +7,4 @@ spec:
   role: roles/storage.admin
   resourceRef:
     kind: Project
-    name: project-factory-project2 # {"$ref":"#/definitions/io.k8s.cli.setters.project-id"}
+    name: project-factory-project # {"$ref":"#/definitions/io.k8s.cli.setters.project-id"}
