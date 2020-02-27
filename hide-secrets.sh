@@ -1,3 +1,3 @@
 #!/bin/bash
-kpt cfg set project-factory billing-account ""
-kpt cfg set project-factory org-id ""
+sed -i "s/organization-id: \".*\"/organization-id: \"\"/" project-factory/core/*project.yaml
+sed -i "s/external: \".*\"/external: \"\"/" project-factory/core/*project.yaml
