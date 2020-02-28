@@ -1,0 +1,13 @@
+apiVersion: iam.cnrm.cloud.google.com/v1beta1
+kind: IAMPolicy
+metadata:
+  name: iampolicy-sample-pubsubadmin
+spec:
+  resourceRef:
+    apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
+    kind: PubSubTopic
+    external: projects/iam-pubsub-kcc/topics/iam-pubsub-topic
+  bindings:
+    - role: roles/editor
+      members:
+        - serviceAccount:iampolicy-dep-pubsubadmin@iam-pubsub-kcc.iam.gserviceaccount.com
