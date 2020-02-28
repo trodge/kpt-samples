@@ -7,8 +7,9 @@ import (
 	"sigs.k8s.io/kustomize/kyaml/yaml"
 )
 
-func Generate(configs *types.Configs) {
+func Generate(configs *types.Configs) error {
 	w := &kio.ByteWriter{Writer: os.Stdout}
 	var nodes []*yaml.RNode
 	w.Write(nodes)
+	return nil
 }

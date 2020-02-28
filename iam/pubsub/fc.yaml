@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: List
+items:
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: audit
+    annotations:
+      config.kubernetes.io/path: audit/namespace.yaml
+      config.kubernetes.io/index: 0
+- apiVersion: v1
+  kind: Namespace
+  metadata:
+    name: shipping-dev
+    annotations:
+      config.kubernetes.io/path: shipping-dev/namespace.yaml
+      config.kubernetes.io/index: 0
+- apiVersion: v1
+  kind: ResourceQuota
+  metadata:
+    name: rq
+    namespace: shipping-dev
+    annotations:
+      config.kubernetes.io/path: shipping-dev/resource-quota.yaml
+      config.kubernetes.io/index: 0
+  spec:
+    hard:
+      cpu: 100m
+      memory: 100Mi
+      pods: 1
