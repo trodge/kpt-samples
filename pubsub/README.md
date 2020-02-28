@@ -1,9 +1,9 @@
-.
+Pubsub
 ==================================================
 
 # NAME
 
-  .
+  Config Connector Pubsub
 
 # SYNOPSIS
 
@@ -11,7 +11,8 @@
 
 # Description
 
-sample description
+  This package contains YAML files for management of a single pubsub topic and
+  subscription through Config Connector.
 
 # SEE ALSO
 
