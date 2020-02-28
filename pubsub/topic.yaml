@@ -1,6 +1,4 @@
 apiVersion: pubsub.cnrm.cloud.google.com/v1beta1
 kind: PubSubTopic
 metadata:
-  labels:
-    label-one: "value-one"
-  name: topic-sample # {"$ref":"#/definitions/io.k8s.cli.setters.topic-name"}
+  name: sample-topic # {"$ref":"#/definitions/io.k8s.cli.setters.topic-name"}

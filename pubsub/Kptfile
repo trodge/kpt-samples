@@ -6,37 +6,43 @@ packageMetadata:
   shortDescription: sample description
 openAPI:
   definitions:
-    io.k8s.cli.setters.subscription-name:
-      description: Name of the pubsub subscription
-      x-k8s-cli:
-        setter:
-          name: subscription-name
-          value: subscription-sample
-    io.k8s.cli.setters.deadline:
-      x-k8s-cli:
-        setter:
-          name: deadline
-          value: "15"
     io.k8s.cli.setters.retain:
+      description: whether acknowledged messages are retained
+      type: boolean
       x-k8s-cli:
         setter:
           name: retain
           value: "false"
-    io.k8s.cli.setters.retention:
-      x-k8s-cli:
-        setter:
-          name: retention
-          value: "86400"
+          setBy: package-default
     io.k8s.cli.setters.topic-name:
+      description: name of Pubsub topic
+      type: string
       x-k8s-cli:
         setter:
           name: topic-name
-          value: topic-sample
-    io.k8s.cli.substitutions.message-retention:
+          value: sample-topic
+          setBy: package-default
+    io.k8s.cli.setters.retention-secs:
+      description: number of seconds messages are retained for
+      type: integer
+      x-k8s-cli:
+        setter:
+          name: retention-secs
+          value: "86400"
+          setBy: package-default
+    io.k8s.cli.setters.subscription-name:
+      description: name of Pubsub subscription
+      type: string
+      x-k8s-cli:
+        setter:
+          name: subscription-name
+          value: sample-subscription
+          setBy: package-default
+    io.k8s.cli.substitutions.retention:
       x-k8s-cli:
         substitution:
-          name: message-retention
-          pattern: RETENTION_SETTERs
+          name: retention
+          pattern: RETENTION_SECSs
           values:
-          - marker: RETENTION_SETTER
-            ref: '#/definitions/io.k8s.cli.setters.retention'
+          - marker: RETENTION_SECS
+            ref: '#/definitions/io.k8s.cli.setters.retention-secs'
