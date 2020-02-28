@@ -1,0 +1,13 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "xm6Rs0j3ZnpA2zyO5nrs9xamg54=",
+			"path": "github.com/GoogleContainerTools/kpt-functions-sdk/go/pkg/framework/runners",
+			"revision": "a4455d83d68d573f687a25211f3b108d8179754b",
+			"revisionTime": "2020-02-21T21:15:44Z"
+		}
+	],
+	"rootPath": "kpt-samples"
+}
