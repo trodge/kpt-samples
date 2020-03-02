@@ -1,6 +1,7 @@
 package generator
 
 import (
+	"fmt"
 	"github.com/GoogleContainerTools/kpt-functions-sdk/go/pkg/framework/types"
 	"os"
 	"sigs.k8s.io/kustomize/kyaml/kio"
@@ -10,6 +11,9 @@ import (
 func Generate(configs *types.Configs) error {
 	w := &kio.ByteWriter{Writer: os.Stdout}
 	var nodes []*yaml.RNode
-	w.Write(nodes)
+	err := w.Write(nodes)
+	if err != nil {
+		fmt.Printf("Error writing nodes: %v", err)
+	}
 	return nil
 }
