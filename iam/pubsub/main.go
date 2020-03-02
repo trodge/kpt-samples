@@ -64,7 +64,12 @@ func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 		if err != nil {
 			return nil, fmt.Errorf("Error unmarshalling function config: %v\n", err)
 		}
-		
+		spec := fc.Spec
+		for _, pst := range spec.PubSubTopics {
+			for _, bdg := spec.Bindings {
+				
+			}
+		}
 	}
 	return in, nil
 }
