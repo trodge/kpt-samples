@@ -60,14 +60,13 @@ func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 	var fc PubSubIAMFunctionConfig
 	for _, i := range in {
 		// Read function config from in RNode.
-		err := yaml.Unmarshal([]byte(i.MustString()), &fc)
-		if err != nil {
+		if err := yaml.Unmarshal([]byte(i.MustString()), &fc); err != nil {
 			return nil, fmt.Errorf("Error unmarshalling function config: %v\n", err)
 		}
 		spec := fc.Spec
 		for _, pst := range spec.PubSubTopics {
-			for _, bdg := spec.Bindings {
-				
+			for _, bdg := range spec.Bindings {
+				fmt.Printf("PubSub Topic: %v, Binding: %v\n", pst, bdg)
 			}
 		}
 	}
