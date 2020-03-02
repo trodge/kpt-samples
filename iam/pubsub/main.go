@@ -17,13 +17,10 @@ func main() {
 	if err != nil {
 		_ = fmt.Errorf("Error opening file: %v\n", err)
 	}
-	b, _ = ioutil.ReadFile("fc.yaml")
-	
 	rw := &kio.ByteReadWriter{
 		Reader:                fc,
 		Writer:                os.Stdout,
 		KeepReaderAnnotations: true,
-		FunctionConfig: yaml.MustParse(string(b)),
 	}
 	err = kio.Pipeline{
 		Inputs: []kio.Reader{rw},
@@ -61,12 +58,13 @@ type Binding struct {
 
 func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 	var fc PubSubIAMFunctionConfig
-	if err := yaml.Unmarshal([]byte(f.rw.FunctionConfig.MustString()), &fc); err != nil {
-		fmt.Fprintf(os.Stderr, "%v\n", err)
-		os.Exit(1)
-	}
 	for _, i := range in {
-		// Generate your objects here
+		// Read function config from in RNode.
+		err := yaml.Unmarshal([]byte(i.MustString()), &fc)
+		if err != nil {
+			return nil, fmt.Errorf("Error unmarshalling function config: %v\n", err)
+		}
+		
 	}
 	return in, nil
 }
