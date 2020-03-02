@@ -58,10 +58,13 @@ type Binding struct {
 
 func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 	var fc PubSubIAMFunctionConfig
-	bytes := []byte(f.rw.FunctionConfig.MustString())
-	err := yaml.Unmarshal(bytes, &fc)
-	if err != nil {
-		return nil, fmt.Errorf("Error unmarshalling function config: %v\n", err)
+	for _, i := range in {
+		// Read function config from in RNode.
+		err := yaml.Unmarshal([]byte(i.MustString()), &fc)
+		if err != nil {
+			return nil, fmt.Errorf("Error unmarshalling function config: %v\n", err)
+		}
+		
 	}
-	return in, err
+	return in, nil
 }
