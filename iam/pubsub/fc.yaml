@@ -1,14 +1,12 @@
 apiVersion: v1
-kind: List
-items:
-  - apiVersion: v1
-    kind: IAMPolicy
-    spec:
-      pubSubTopics:
-        - my-pubsub_topic_one
-        - my-pubsub_topic_two
-      bindings:
-        - role: roles/editor
-          members:
-            # replace ${PROJECT_ID?} with your project name
-            - serviceAccount:iampolicy-dep-pubsubadmin@${PROJECT_ID?}.iam.gserviceaccount.com
+kind: PubSubIAMFunction
+spec:
+  project: iam-pubsub-kcc
+  pubSubTopics:
+    - my-pubsub_topic_one
+    - my-pubsub_topic_two
+  bindings:
+    - role: roles/editor
+      members:
+        # replace ${PROJECT_ID?} with your project name
+        - serviceAccount:iampolicy-dep-pubsubadmin@${PROJECT_ID?}.iam.gserviceaccount.com
