@@ -1,9 +1,9 @@
 apiVersion: kpt.dev/v1alpha1
 kind: Kptfile
 metadata:
-  name: .
+  name: Pubsub
 packageMetadata:
-  shortDescription: sample description
+  shortDescription: Config Connector Pubsub
 openAPI:
   definitions:
     io.k8s.cli.setters.retain:
