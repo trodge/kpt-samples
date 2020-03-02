@@ -46,3 +46,19 @@ openAPI:
           values:
           - marker: RETENTION_SECS
             ref: '#/definitions/io.k8s.cli.setters.retention-secs'
+    io.k8s.cli.setters.service-account-email:
+      description: service account email to use for push authentication
+      type: string
+      x-k8s-cli:
+        setter:
+          name: service-account-email
+          value: pubsub-app@example-project.iam.gserviceaccount.com
+          setBy: push-config-default
+    io.k8s.cli.setters.push-endpoint:
+      description: endpoint URL for push messages
+      type: string
+      x-k8s-cli:
+        setter:
+          name: push-endpoint
+          value: https://example.com/push
+          setBy: push-config-default

@@ -7,12 +7,23 @@ Pubsub
 
 # SYNOPSIS
 
-  kubectl apply --recursive -f .
+  To apply pull subscription:
+
+  `kubectl apply -f topic.yaml`
+
+  `kubectl apply -f subscription.yaml`
+
+  To apply push subscription:
+
+  `kubectl apply -f topic.yaml`
+
+  `kustomize build . | kubectl apply -f -`
 
 # Description
 
-  This package contains YAML files for management of a single pubsub topic and
-  subscription through Config Connector.
+  This package contains YAML files for management of a single PubSub topic and
+  pull subscription through Config Connector. To build a push subscription YAML
+  run `kustomize build .`
 
-# SEE ALSO
+  kustomize can be found at https://github.com/kubernetes-sigs/kustomize
 

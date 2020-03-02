@@ -1,0 +1,4 @@
+bases:
+- subscription.yaml
+patches:
+- push_config.yaml
