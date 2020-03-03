@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strings"
 
 	"sigs.k8s.io/kustomize/kyaml/kio"
 	"sigs.k8s.io/kustomize/kyaml/kio/filters"
@@ -58,6 +59,7 @@ type Binding struct {
 
 func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 	var fc PubSubIAMFunctionConfig
+	var out []*yaml.RNode
 	for _, i := range in {
 		// Read function config from in RNode.
 		if err := yaml.Unmarshal([]byte(i.MustString()), &fc); err != nil {
@@ -66,7 +68,12 @@ func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 		spec := fc.Spec
 		for _, pst := range spec.PubSubTopics {
 			for _, bdg := range spec.Bindings {
+				for i := range bdg.Members {
+					mbr := &bdg.Members[i]
+					*mbr = strings.ReplaceAll(*mbr, "${PROJECT_ID?}", spec.Project)
+				}
 				fmt.Printf("PubSub Topic: %v, Binding: %v\n", pst, bdg)
+				out = append(out, nil)
 			}
 		}
 	}
