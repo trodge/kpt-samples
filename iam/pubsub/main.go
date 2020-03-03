@@ -61,12 +61,12 @@ type Binding struct {
 type IAMPolicy struct {
 	Spec struct {
 
-	}
+	} `yaml:"spec"`
 }
 
 func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 	var fc PubSubIAMFunctionConfig
-	var out []*yaml.RNode
+	//var out []*yaml.RNode
 	for _, i := range in {
 		// Read function config from in RNode.
 		if err := yaml.Unmarshal([]byte(i.MustString()), &fc); err != nil {
@@ -82,8 +82,8 @@ func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 				}
 				fmt.Printf("PubSub Topic: %v, Binding: %v\n", pst, bdg)
 			}
-
-			out = append(out, nil)
+			//var plc IAMPolicy
+			// TODO: Construct policies for all binding-topic pairs
 		}
 	}
 	return in, nil
