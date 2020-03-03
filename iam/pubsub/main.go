@@ -14,6 +14,7 @@ import (
 const usage = "Generates IAM Policies for multiple pubsub topics."
 
 func main() {
+	// Loading the file manually for debugging purposes. The eventual goal is to load configs from Stdin.
 	fc, err := os.Open("fc.yaml")
 	if err != nil {
 		_ = fmt.Errorf("Error opening file: %v\n", err)
@@ -26,7 +27,7 @@ func main() {
 	err = kio.Pipeline{
 		Inputs: []kio.Reader{rw},
 		Filters: []kio.Filter{
-			&filter{rw: rw},       // generate the Resources from the input
+			&filter{rw: rw},// generate the Resources from the input
 			// set Resource filenames
 			&filters.FileSetter{FilenamePattern: filepath.Join("config", "%n.yaml")},
 			filters.FormatFilter{}, // format the output
@@ -49,12 +50,18 @@ type PubSubIAMFunctionConfig struct {
 		Project string `yaml:"project"`
 		PubSubTopics []string `yaml:"pubSubTopics"`
 		Bindings []Binding `yaml:"bindings"`
-	}
+	} `yaml:"spec"`
 }
 
 type Binding struct {
 	Role string `yaml:"role"`
 	Members []string `yaml:"members"`
+}
+
+type IAMPolicy struct {
+	Spec struct {
+
+	}
 }
 
 func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
@@ -69,12 +76,14 @@ func (f *filter) Filter(in []*yaml.RNode) ([]*yaml.RNode, error) {
 		for _, pst := range spec.PubSubTopics {
 			for _, bdg := range spec.Bindings {
 				for i := range bdg.Members {
+					// Replace project id string into members of bindings.
 					mbr := &bdg.Members[i]
 					*mbr = strings.ReplaceAll(*mbr, "${PROJECT_ID?}", spec.Project)
 				}
 				fmt.Printf("PubSub Topic: %v, Binding: %v\n", pst, bdg)
-				out = append(out, nil)
 			}
+
+			out = append(out, nil)
 		}
 	}
 	return in, nil
